@@ -14,7 +14,7 @@ Commit your code regularly and meaningfully. This helps both you and your team l
 
 ## Description
 
-In this project you will build out a application to show the nasa photo of the day.
+In this project you will build out a application for car sales. 
 
 ## Project Set Up
 
@@ -60,9 +60,21 @@ Follow these steps for completing your project.
 - As you work through setting up redux, you can do it however you'd like. This is the flow that works for me:
 
 ```text
-Set up "empty" reducer and initial state 👉 Set up store and Provider 👉
-Connect components 👉 Add events and event handlers in UI 👉 Build action creators 👉
-write the reducer logic for the actions 👉 Rinse and repeat
+step 0. Set up "empty" reducer and initial state 
+👉 
+step 1. Set up store and Provider 
+👉
+step 2. Connect components 
+👉
+step 2.3. create action types in actions/index.js.
+👉 
+step 2.5. Add events and event handlers in UI 
+👉 
+step 3. Build action creators 
+👉
+step 4. write the reducer logic for the actions 
+👉 
+Rinse and repeat
 ```
 
 ## _MVP Requirements:_
