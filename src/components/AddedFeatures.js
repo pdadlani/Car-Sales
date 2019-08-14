@@ -9,6 +9,8 @@ import AddedFeature from './AddedFeature';
 // - build a mSTP function to access the state tree
 
 const AddedFeatures = props => {
+
+  console.log('added features props', props);
   return (
     <div className="content">
       <h6>Added features:</h6>

@@ -9,13 +9,16 @@ import AdditionalFeature from './AdditionalFeature';
 // - build a mSTP function to access the state tree
 
 const AdditionalFeatures = props => {
+
+  console.log('additional features props', props);
+
   return (
     <div className="content">
       <h4>Additional Features</h4>
       {props.store.length ? (
         <ol type="1">
           {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
+            <AdditionalFeature key={item.id} feature={item} buyItem={props.buyItem} />
           ))}
         </ol>
       ) : (
