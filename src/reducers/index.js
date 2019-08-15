@@ -35,12 +35,16 @@ export const reducer = (state = initialState, action) => {
         } 
     }
     case ADD:
+      if (state.car.features.map(item => item.id).includes(action.payload.id)) {
+        return state
+      }
       return {
         ...state,
         additionalPrice: state.additionalPrice + action.payload.price,
         car: {
           ...state.car,
-          features: [...state.car.features, action.payload]
+          features: [...state.car.features, action.payload],
+          // features: state.car.features.reduce((unique, item) => {return unique.includes(item) ? unique : [...unique, item]}, [])
         }
       }
     default:
