@@ -1,8 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { removeFeature } from '../actions/index.js';
 import AddedFeature from './AddedFeature';
 
+// STEP 2 - Connect a component and give it access to the state from Redux
+// - import the connect HOC
+// - build a mSTP function to access the state tree
+
 const AddedFeatures = props => {
+
+  console.log('added features props', props);
   return (
     <div className="content">
       <h6>Added features:</h6>
@@ -19,4 +27,10 @@ const AddedFeatures = props => {
   );
 };
 
-export default AddedFeatures;
+const mapStateToProps = state => {
+  return {
+    car: state.car
+  };
+};
+
+export default connect(mapStateToProps, { removeFeature })(AddedFeatures);

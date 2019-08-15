@@ -1,4 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+// STEP 2 - Connect a component and give it access to the state from Redux
+// - import the connect HOC
+// - build a mSTP function to access the state tree
 
 const Header = props => {
   return (
@@ -12,4 +17,11 @@ const Header = props => {
   );
 };
 
-export default Header;
+const mapStateToProps = state => {
+  console.log('header state', state);
+  return {
+    car: state.car
+  };
+};
+
+export default connect(mapStateToProps, {})(Header);

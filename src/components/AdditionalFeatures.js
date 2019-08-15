@@ -1,14 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { buyItem } from '../actions/index.js';
 import AdditionalFeature from './AdditionalFeature';
 
+// STEP 2 - Connect a component and give it access to the state from Redux
+// - import the connect HOC
+// - build a mSTP function to access the state tree
+
 const AdditionalFeatures = props => {
+
+  console.log('additional features props', props);
+
   return (
     <div className="content">
       <h4>Additional Features</h4>
       {props.store.length ? (
         <ol type="1">
           {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
+            <AdditionalFeature key={item.id} feature={item} buyItem={props.buyItem} />
           ))}
         </ol>
       ) : (
@@ -18,4 +28,10 @@ const AdditionalFeatures = props => {
   );
 };
 
-export default AdditionalFeatures;
+const mapStateToProps = state => {
+  return {
+    store: state.store
+  };
+};
+
+export default connect(mapStateToProps, { buyItem })(AdditionalFeatures);
